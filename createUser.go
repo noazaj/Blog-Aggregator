@@ -20,6 +20,7 @@ type userResponse struct {
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 	Name      string    `json:"name"`
+	ApiKey    string    `json:"api_key"`
 }
 
 // createUser is utilized to handle the endpoint of v1/users
@@ -56,6 +57,7 @@ func (cfg *apiConfig) createUser(w http.ResponseWriter, r *http.Request) {
 		CreatedAt: user.CreatedAt,
 		UpdatedAt: user.UpdatedAt,
 		Name:      user.Name,
+		ApiKey:    user.ApiKey,
 	}
 
 	// Respond with JSON
