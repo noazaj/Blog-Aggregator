@@ -59,7 +59,7 @@ func main() {
 	v1.Get("/readiness", handlerReadiness)
 	v1.Get("/err", handlerError)
 	v1.Post("/users", config.createUser)
-	v1.Get("/users", config.getUser)
+	v1.Get("/users", config.middlewareAuth(config.getUser))
 
 	// Create a server with the designated port and router
 	srv := &http.Server{
