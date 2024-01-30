@@ -60,6 +60,7 @@ func main() {
 	v1.Get("/err", handlerError)
 	v1.Post("/users", config.createUser)
 	v1.Get("/users", config.middlewareAuth(config.getUser))
+	v1.Post("/feeds", config.middlewareAuth(config.createFeed))
 
 	// Create a server with the designated port and router
 	srv := &http.Server{
