@@ -17,8 +17,8 @@ type feedFollowRequest struct {
 // feed_follow response
 type feedFollowResponse struct {
 	ID        uuid.UUID `json:"id"`
-	FeedID    uuid.UUID `json"feed_id"`
-	UserID    uuid.UUID `josn"user_id"`
+	FeedID    uuid.UUID `json:"feed_id"`
+	UserID    uuid.UUID `josn:"user_id"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
