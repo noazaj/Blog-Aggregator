@@ -61,6 +61,7 @@ func main() {
 	v1.Post("/users", config.createUser)
 	v1.Get("/users", config.middlewareAuth(config.getUser))
 	v1.Post("/feeds", config.middlewareAuth(config.createFeed))
+	v1.Get("/feeds", config.getFeeds)
 
 	// Create a server with the designated port and router
 	srv := &http.Server{
